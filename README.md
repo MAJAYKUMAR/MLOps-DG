@@ -10,7 +10,7 @@
 
 docker build -t flasksimpleapp.azurecr.io/mltest:latest .
 
-docker login flasksimpleapp.azurecr.io
+docker login mlopsdg.azurecr.io
 
 docker push flasksimpleapp.azurecr.io/mltest:latest
 
