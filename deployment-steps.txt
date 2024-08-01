@@ -4,12 +4,14 @@ ta0rW+JXf/LfkE2KBJgSdTVzi34436S+ACRAbqmA/
 
 
 ## Run from terminal:
+#If in case error for first line 
+echo $DOCKER_PASSWORD | docker login mlopsdg.azurecr.io --username $DOCKER_USERNAME --password-stdin
 
-docker build -t bappyapp.azurecr.io/mltest:latest .
+docker build -t mlopsdg.azurecr.io/mlopsdg:latest .
 
-docker login bappyapp.azurecr.io
+docker login mlopsdg.azurecr.io
 
-docker push bappyapp.azurecr.io/mltest:latest
+docker push mlopsdg.azurecr.io/mltest:latest
 
 
 ## Deployment Steps:
