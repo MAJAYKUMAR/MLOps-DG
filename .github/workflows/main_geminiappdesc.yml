@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App - mlopsgeminidg
+name: Build and deploy container app to Azure Web App - geminiappdesc
 
 on:
   push:
@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v2
       with:
-        registry: https://mlopsgeminidg.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_3c1a75a2c5c4479291fb9166f7c4c278 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_41743ecbd6af4fd786200fd05fcef1f6 }}
+        registry: https://geminiappdesc.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_e2a8871adc2d4f93a19b21e90d00fd8b }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_c791f962c41c476289d4db541b69eeb0 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mlopsgeminidg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3c1a75a2c5c4479291fb9166f7c4c278 }}/mlopsgeminidg:${{ github.sha }}
+        tags: geminiappdesc.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e2a8871adc2d4f93a19b21e90d00fd8b }}/geminiappdesc:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -45,7 +45,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'mlopsgeminidg'
+        app-name: 'geminiappdesc'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_445e28b91a3145ffa0b9089c30b21e26 }}
-        images: 'mlopsgeminidg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3c1a75a2c5c4479291fb9166f7c4c278 }}/mlopsgeminidg:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f9e49dd507c042769d1ef647169d5c95 }}
+        images: 'geminiappdesc.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e2a8871adc2d4f93a19b21e90d00fd8b }}/geminiappdesc:${{ github.sha }}'
