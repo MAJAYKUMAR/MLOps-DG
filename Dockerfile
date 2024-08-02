@@ -4,10 +4,10 @@ COPY . /app
 
 RUN apt update -y
 
-RUN apt-get update && pip install -r req.txt
+RUN apt-get update && pip install --no-cache-dir -r req.txt
 EXPOSE 8000
 
 # Define environment variable
-ENV NAME World
+ENV PORT 8000
 
-CMD ["python3", "app.py"]
+CMD ["python", "app.py"]
