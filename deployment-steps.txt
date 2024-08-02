@@ -1,17 +1,15 @@
 ## Save pass:
 
-ta0rW+JXf/LfkE2KBJgSdTVzi34436S+ACRAbqmA/
-
 
 ## Run from terminal:
 #If in case error for first line 
 echo $DOCKER_PASSWORD | docker login mlopsdg.azurecr.io --username $DOCKER_USERNAME --password-stdin
 
-docker build -t mlopsdg.azurecr.io/mlopsdg:latest .
+docker build -t geminiappdesc.azurecr.io/geminiappdesc:latest .
 
-docker login mlopsdg.azurecr.io
+docker login geminiappdesc.azurecr.io
 
-docker push mlopsdg.azurecr.io/mltest:latest
+docker push geminiappdesc.azurecr.io/geminiappdesc:latest
 
 
 ## Deployment Steps:
