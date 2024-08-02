@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 from PIL import Image
 import os
 import google.generativeai as genai
-from openpyxl import Workbook
 
 app = Flask(__name__)
 
