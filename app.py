@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from PIL import Image
 import os
@@ -6,6 +5,7 @@ import google.generativeai as genai
 from openpyxl import Workbook
 
 app = Flask(__name__)
+
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['GENERATIVE_API_KEY'] = 'AIzaSyCc4nwwo9RnY3J3YrWdo3DGh91fU_dPz_o'
 app.config['GEN_MODEL_NAME'] = 'gemini-1.5-flash'
